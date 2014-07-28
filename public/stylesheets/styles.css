@@ -1,0 +1,83 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	min-width: 1140px;
+}
+#images-box {
+	margin: 0 auto;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+	background-color: yellow;
+}
+.pirate-icon {
+	width: 20px;
+	height: 20px;
+	display: inline;
+}
+#pirate-box {
+	min-height: 20px;
+}
+#game-level-alert {
+	width: 400px;
+	height: 100px;
+	background-color: red;
+	text-align:center;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-50px 0 0 -200px;
+}
+#game-level-alert button {
+	width: 100px;
+	height: 40px;
+}
+#best-players-link:hover {
+	color: green;
+}
+#best-players {
+	width: 400px;
+	height: 300px;
+	background-color: grey;
+	text-align:center;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-150px 0 0 -200px;
+}
+.alert-not-now {
+  display:none;
+}
+#restart-game-box {
+	outline: 1px black solid;
+	background-color: orange;
+	width: 50px;
+	height: 15px;
+	display: inline;
+	margin-bottom: 3px;
+}
+#best-player-form {
+	width: 400px;
+	height: 250px;
+	background-color: blue;
+	text-align:center;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-125px 0 0 -200px;
+  color: white;
+}
+#best-player-form form{
+	width: 60%;
+	float: left;
+}
+#best-player-ranks {
+	width: 40%;
+	float: left;
+	text-align: left;
+}
+#game-timer {
+	color: red;
+}
+#pirates-found-count {
+	margin-left: 10px;
+}

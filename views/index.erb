@@ -1,0 +1,39 @@
+<h1>Find the Pirates!</h1>
+Level: <span id="game-level">1</span></br>
+Score: <span id="game-score">0</span>
+<div id="pirate-box">
+	Pirates found: <span id="pirates-found">0</span><span id="pirates-found-count"></span></br>
+</div>
+Time left: <span id="game-timer"></span>
+<button class="restart-game-button">Sail Again</button>
+<h1 id="best-players-link">Top Arrggregators</h1>
+<div id="rjs-box"></div>
+<div id="game-level-alert" class="alert-not-now">
+	<p>This is the Next Level Alert</p>
+	<button id="confirmation">Keep Sailing!</button>
+	<button id="reset-alert-box" class="restart-game-button alert-not-now">Try Again</button>
+</div>
+<div id="best-players" class="alert-not-now">
+	<% @players.each do |player| %>
+		<%= player.name %>
+		<span class="top-score"><%= player.score %></span></br>
+	<% end %>
+</div>
+<div id="best-player-form" class="alert-not-now">
+	<h1>Great Job Arrrgregating those Pirates!</h1>
+	<h1>Congrats! You've made the list!</h1>
+	<h1>Your Score: <span id="high-score"></span></h1>
+	<div id="best-player-ranks">
+		<% @players.each do |player| %>
+			<%= player.name %>
+			<span class="top-score"><%= player.score %></span></br>
+		<% end %>
+	</div>
+	<form action="/add" method="POST">
+		<input type="hidden" name="score" value="">
+		<input type="text" maxlength="4" name="name" placeholder="name"></br>
+		<button type="submit">Join the Ranks</button>
+		<button class="restart-game-button">Sail Again</button>
+	</form>
+</div>
+
