@@ -65,7 +65,7 @@ function drawImages(){
 
 function listenToAlertBox() {
 	document.getElementById('game-level-alert').children[1].addEventListener('click', function(){
-		this.parentElement.classList.add('alert-not-now')
+		this.parentElement.classList.add('alert-not-now');
 	});
 }
 
@@ -79,6 +79,7 @@ function listenForGameRestart(game) {
 		clearImages("pirates-found-count");
 		clearImages("rjs-box");
 		drawImages();
+		$("#reset-alert-box").addClass("alert-not-now");
 		if ($("#game-level-alert").hasClass("alert-not-now") == false) {
 				$("#game-level-alert").addClass("alert-not-now");
 				game.restart();		} 
