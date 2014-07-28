@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 db = URI.parse('postgres://Jane:pass@localhost/players')
