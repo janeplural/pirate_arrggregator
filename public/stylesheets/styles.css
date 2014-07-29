@@ -55,7 +55,7 @@ html, body {
 	display: inline;
 	margin-bottom: 3px;
 }
-#best-player-form {
+#best-player-form, #splash-box {
 	width: 400px;
 	height: 250px;
 	background-color: blue;
@@ -74,6 +74,9 @@ html, body {
 	width: 40%;
 	float: left;
 	text-align: left;
+}
+#splash-box {
+	background-color: grey;
 }
 #game-timer {
 	color: red;

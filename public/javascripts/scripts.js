@@ -7,9 +7,8 @@ $(function() {
 	drawImages();
 	keeperOfBestPlayers();
 	listenToAlertBox();
+	listenForGameStart(game);
 	listenForGameRestart(game);
-
-	game.start();
 
 });
 

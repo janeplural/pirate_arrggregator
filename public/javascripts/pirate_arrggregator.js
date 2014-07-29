@@ -63,6 +63,18 @@ function drawImages(){
 	manageClickableImage($(".clickMe"));
 }
 
+function listenForGameStart(game) {
+	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
+	nuhHuh.attr({"fill":"blue"});
+	$("#splash-box").removeClass("alert-not-now");
+	$("#splash-box").removeClass("alert-not-now");
+	$("#splash-box button").on("click", function() {
+		nuhHuh.remove();
+		$("#splash-box").addClass("alert-not-now");
+		game.start();
+	});
+}
+
 function listenToAlertBox() {
 	document.getElementById('game-level-alert').children[1].addEventListener('click', function(){
 		this.parentElement.classList.add('alert-not-now');
@@ -80,15 +92,14 @@ function listenForGameRestart(game) {
 		clearImages("rjs-box");
 		drawImages();
 		$("#reset-alert-box").addClass("alert-not-now");
-		if ($("#game-level-alert").hasClass("alert-not-now") == false) {
-				$("#game-level-alert").addClass("alert-not-now");
-				game.restart();		} 
+		if (!$("#game-level-alert").hasClass("alert-not-now")) {
+			$("#game-level-alert").addClass("alert-not-now");
+			game.restart();		} 
 		else if ($("#game-level-alert").hasClass("alert-not-now")) {
 			game.restart();
 		}
 	});
 }
-
 
 /* ********************************* */
 /* NON-TOP-LEVEL FUNCTIONS DOWN HERE */
@@ -254,7 +265,6 @@ function clearImages(cssSelector) {
 	  currPapel.removeChild(currPapel.lastChild);
 	}
 }
-
 
 // #NOTEtoSelf troubleshoot templating!
 function advanceToNextLevel(currlevel) {
