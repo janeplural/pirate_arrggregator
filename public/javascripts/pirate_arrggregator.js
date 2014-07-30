@@ -63,11 +63,17 @@ function drawImages(){
 	manageClickableImage($(".clickMe"));
 }
 
+function listenToAlertBox() {
+	document.getElementById('game-level-alert').children[1].addEventListener('click', function(){
+		this.parentElement.classList.add('alert-not-now');
+	});
+}
+
 function listenForGameStart(game) {
 	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
 	nuhHuh.attr({"fill":"blue"});
 	$("#splash-box").removeClass("alert-not-now");
-	$("#splash-box").removeClass("alert-not-now");
+	
 	$("#splash-box button").on("click", function() {
 		nuhHuh.remove();
 		$("#splash-box").addClass("alert-not-now");
@@ -75,16 +81,11 @@ function listenForGameStart(game) {
 	});
 }
 
-function listenToAlertBox() {
-	document.getElementById('game-level-alert').children[1].addEventListener('click', function(){
-		this.parentElement.classList.add('alert-not-now');
-	});
-}
-
 // #NOTEtoSelf pick either button or box
 // if box work on hover and cursor pointer stuff
 function listenForGameRestart(game) {
 	$(".restart-game-button").on("click",function(){
+		$("#best-player-form").addClass("alert-not-now");
 		updateGameStats("game-level", 1);
 		updateGameStats("game-score", 0);
 		updateGameStats("pirates-found", 0);
@@ -94,10 +95,10 @@ function listenForGameRestart(game) {
 		$("#reset-alert-box").addClass("alert-not-now");
 		if (!$("#game-level-alert").hasClass("alert-not-now")) {
 			$("#game-level-alert").addClass("alert-not-now");
-			game.restart();		} 
-		else if ($("#game-level-alert").hasClass("alert-not-now")) {
+			game.restart();		
+		} else if ($("#game-level-alert").hasClass("alert-not-now")) {
 			game.restart();
-		}
+		} 
 	});
 }
 
