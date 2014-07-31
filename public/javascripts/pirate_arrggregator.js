@@ -72,11 +72,11 @@ function listenToAlertBox() {
 function listenForGameStart(game) {
 	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
 	nuhHuh.attr({"fill":"blue"});
-	$("#splash-box").removeClass("alert-not-now");
+	$("#instructions").removeClass("alert-not-now");
 	
-	$("#splash-box button").on("click", function() {
+	$("#instructions button").on("click", function() {
 		nuhHuh.remove();
-		$("#splash-box").addClass("alert-not-now");
+		$("#instructions").addClass("alert-not-now");
 		game.start();
 	});
 }
@@ -228,8 +228,10 @@ function youCantPlayNoMo() {
 		$("#game-level-alert").removeClass("alert-not-now");
 	} else if (checkForBestPlayer()) {
 		$("#high-score").html($("#game-score").text());
-		$("input:hidden[name='score']").val(parseInt($("#game-score").text()));
 		$("#best-player-form").removeClass("alert-not-now");
+		$("form").on("submit", function(){
+			$("input:hidden[name='score']").val(parseInt($("#game-score").text()));
+		});
 	}
 
 }
