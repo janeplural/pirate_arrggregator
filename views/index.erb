@@ -1,17 +1,53 @@
-<h1>Find the Pirates!</h1>
-Level: <span id="game-level">1</span></br>
-Score: <span id="game-score">0</span>
-<div id="pirate-box">
-	Pirates found: <span id="pirates-found">0</span><span id="pirates-found-count"></span></br>
+<div id="title">
+	<h4 id="best-players-link">Top Arrggregators</h4>
+	<h1>Pirate ARRGGregator</h1>
 </div>
-Time left: <span id="game-timer"></span>
-<button class="restart-game-button">Sail Again</button>
-<h1 id="best-players-link">Top Arrggregators</h1>
+
+<div id="stats-holder">
+	<div id="stat-level" class="stat">
+		<h4>Level</h4>
+		<h1 id="game-level">1</h1>
+	</div>
+	<div id="stat-score" class="stat">
+		<h4>Score</h4>
+		<h1 id="game-score">0</h1>
+		<div id="pirate-found-num">
+			<h4>Arrggregated: <span id="pirates-found">0</span></h4>
+		</div>
+		<div id="pirates-found-count"></div>
+	</div>
+	<div id="stat-time" class="stat">
+		<h4>Time Remaning</h4>
+		<h1 id="game-timer"></h1>
+		<button class="restart-game-button">Sail Again</button>
+	</div>
+</div>
+
+<!-- Raphael.js canvas where images are generated -->
 <div id="rjs-box"></div>
-<div id="splash-box" class="alert-not-now">
+
+<!-- Instructions before player enters the game -->
+<div id="instructions" class="alert-not-now">
+	<h1>How to Play</h1>
+	<h2>Find all the hidden Pirates. Only then can you advance to the next level. Good Luck.</h2>
+	<button>Start Sailing</button>
+</div>
+
+
+<!-- Level: <span id="game-level">1</span></br> -->
+<!-- Score: <span id="game-score">0</span> -->
+<!-- <div id="pirate-box">
+	Pirates found: <span id="pirates-found">0</span><span id="pirates-found-count"></span></br>
+</div> -->
+<!-- Time left: <span id="game-timer"></span>
+<button class="restart-game-button">Sail Again</button> -->
+<!-- <h1 id="best-players-link">Top Arrggregators</h1>
+ -->
+ <!-- <div id="rjs-box"></div> -->
+<!-- <div id="splash-box" class="alert-not-now">
 	<h1>Find the Pirates!</h1>
 	<button>Start</button>
-</div>
+</div> -->
 <div id="game-level-alert" class="alert-not-now">
 	<p>This is the Next Level Alert</p>
 	<button id="confirmation">Keep Sailing!</button>

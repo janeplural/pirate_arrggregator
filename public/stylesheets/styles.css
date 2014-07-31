@@ -1,6 +1,86 @@
 html, body {
 	min-width: 1140px;
 }
+h1 {
+	font-size: xx-large;
+}
+h2 {
+	font-size: x-large;
+}
+h4 {
+	font-size: medium;
+}
+#title {
+	text-align: center;
+	padding: 1%;
+}
+#stats-holder {
+	padding-left: 3%;
+	min-height: 18%;
+}
+.stat {
+	text-align: center;
+	padding: 1%;
+	margin-left: 1%;
+	float: left;
+}
+#stat-level {
+	width: 20%;
+}
+#stat-score {
+	width: 45%;
+}
+#stat-time {
+	width: 20%;
+}
+#pirate-found-num {
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+#pirates-found-count {
+	margin-left: 2%;
+	width: 40%;
+	float: left;
+	text-align: left;
+}
+#best-players-link {
+	text-align: right;
+}
+#best-players-link:hover {
+	color: green;
+}
+
+/*** Instructions & Best Player Form ***/
+#best-player-form, #instructions {
+	width: 400px;
+	height: 250px;
+	background-color: blue;
+	text-align:center;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-125px 0 0 -200px;
+  color: white;
+}
+#instructions h1 {
+	line-height: 200%;
+}
+#instructions h2 {
+	text-align: left;
+	margin: 0 3%;
+}
+#instructions button{
+	font-size: large;
+	width: 40%;
+	height: 20%;
+	margin-top: 3%;	
+}
+
+/*** Game-Level box ***/
+
+
+/******* old cold below *******/
 #images-box {
 	margin: 0 auto;
 	border-top: 1px black solid;
@@ -12,10 +92,10 @@ html, body {
 	height: 20px;
 	display: inline;
 }
-#pirate-box {
+/*#pirate-box {
 	min-height: 20px;
 }
-#game-level-alert {
+*/#game-level-alert {
 	width: 400px;
 	height: 100px;
 	background-color: red;
@@ -29,9 +109,12 @@ html, body {
 	width: 100px;
 	height: 40px;
 }
+/*#best-players-link {
+	text-align: right;
+}
 #best-players-link:hover {
 	color: green;
-}
+}*/
 #best-players {
 	width: 400px;
 	height: 300px;
@@ -53,7 +136,7 @@ html, body {
 	display: inline;
 	margin-bottom: 3px;
 }
-#best-player-form, #splash-box {
+/*#best-player-form, #instructions {
 	width: 400px;
 	height: 250px;
 	background-color: blue;
@@ -63,7 +146,7 @@ html, body {
   top:40%;
   margin:-125px 0 0 -200px;
   color: white;
-}
+}*/
 #best-player-form form{
 	width: 60%;
 	float: left;
@@ -73,12 +156,12 @@ html, body {
 	float: left;
 	text-align: left;
 }
-#splash-box {
+#instructions {
 	background-color: grey;
 }
 #game-timer {
 	color: red;
 }
-#pirates-found-count {
+/*#pirates-found-count {
 	margin-left: 10px;
-}
+}*/
