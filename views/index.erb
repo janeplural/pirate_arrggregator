@@ -59,8 +59,8 @@
 <!-- Best Player Form -->
 <div id="best-player-form" class="alert-not-now">
 	<h1>Great Job Arrrgregating those Pirates!</h1>
-	<h1>Congrats! You've made the list!</h1>
-	<h1>Your Score: <span id="high-score"></span></h1>
+	<h1>Your Score: <span id="high-score"></span>
+	<button class="restart-game-button">Sail Again</button></h1>
 	<div id="best-player-ranks">
 		<table>
 		<tr>
@@ -75,10 +75,9 @@
 		<% end %>
 	</table>
 	</div>
-	<button class="restart-game-button">Sail Again</button>
 	<form action="/add" method="POST">
 		<input type="hidden" name="score" value="">
-		<input type="text" maxlength="4" name="name" placeholder="name"></br>
+		<input type="text" maxlength="4" name="name" placeholder="Name"></br>
 		<button type="submit">Join the Ranks</button>
 	</form>
 </div>
