@@ -16,12 +16,16 @@ class Player < ActiveRecord::Base
 end
 
 get "/" do 
-	@players = Player.order(score: :desc).limit(5)
+	@players = Player.order(score: :desc).limit(10)
 
 	erb :index
 end
 
 post "/add" do
+	if params[:name] == ""
+		params[:name] = "USER"
+	end
+
 	Player.create(
 		name: params[:name],
 		score: params[:score]

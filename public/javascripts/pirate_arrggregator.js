@@ -222,16 +222,14 @@ function youCantPlayNoMo() {
 	nuhHuh.attr({"fill-opacity":0.4});
 
 	if (!checkForBestPlayer()) {
-		$("#game-level-alert p").html("GAME OVER");
+		$("#game-level-alert h2").html("GAME OVER");
 		$("#confirmation").html("ok");
 		$("#reset-alert-box").removeClass("alert-not-now");
 		$("#game-level-alert").removeClass("alert-not-now");
 	} else if (checkForBestPlayer()) {
 		$("#high-score").html($("#game-score").text());
 		$("#best-player-form").removeClass("alert-not-now");
-		$("form").on("submit", function(){
-			$("input:hidden[name='score']").val(parseInt($("#game-score").text()));
-		});
+		$("input:hidden[name='score']").val(parseInt($("#game-score").text()));
 	}
 
 }
@@ -272,11 +270,11 @@ function clearImages(cssSelector) {
 // #NOTEtoSelf troubleshoot templating!
 function advanceToNextLevel(currlevel) {
 	if (currlevel > 1){
-		var currLevelInfo = _.template("<div>You've found all " + currlevel + " Pirates! Advance to level " + (currlevel += 1) + "</div>");
+		var currLevelInfo = _.template("<div>You've found all " + currlevel + " Pirates!</br>Advance to level " + (currlevel += 1) + "</div>");
 	} else if (currlevel == 1) {
-		var currLevelInfo = _.template("<div>You've found the Pirate! Advance to level " + (currlevel += 1) + "</div>");
+		var currLevelInfo = _.template("<div>You've found the Pirate!</br>Advance to level " + (currlevel += 1) + "</div>");
 	}
-	$("#game-level-alert p").html(currLevelInfo);
+	$("#game-level-alert h2").html(currLevelInfo);
 	document.getElementById('game-level-alert').classList.remove('alert-not-now');
 	updateGameStats('game-level', currlevel);
 	updateGameStats('pirates-found', 0);
@@ -332,7 +330,6 @@ function manageClickableImage(image) {
 function keeperOfBestPlayers() {
 	$("#best-players-link").on("click", function() {
 		$("#best-players").toggleClass("alert-not-now");
-		console.log("heard click");
 	});
 }
 
