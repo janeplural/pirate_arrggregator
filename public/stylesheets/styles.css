@@ -44,23 +44,24 @@ h4 {
 	float: left;
 	text-align: left;
 }
-#best-players-link {
-	text-align: right;
+.pirate-icon {
+	width: 20px;
+	height: 20px;
+	display: inline;
 }
-#best-players-link:hover {
-	color: green;
+.alert-not-now {
+  display:none;
 }
-
 /*** Instructions & Best Player Form ***/
-#best-player-form, #instructions {
-	width: 400px;
-	height: 250px;
+#best-player-form, #instructions, #best-players {
+	width: 500px;
+	height: 300px;
 	background-color: blue;
 	text-align:center;
   position:absolute;
   left:50%;
   top:40%;
-  margin:-125px 0 0 -200px;
+  margin:-150px 0 0 -250px;
   color: white;
 }
 #instructions h1 {
@@ -68,7 +69,7 @@ h4 {
 }
 #instructions h2 {
 	text-align: left;
-	margin: 0 3%;
+	margin: 0 5%;
 }
 #instructions button{
 	font-size: large;
@@ -78,7 +79,40 @@ h4 {
 }
 
 /*** Game-Level box ***/
+#game-level-alert {
+	width: 400px;
+	height: 100px;
+	background-color: red;
+	text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -200px;
+  padding: 1%;
+}
+#game-level-alert button {
+	width: 100px;
+	height: 40px;
+	margin-top: 1%
+}
 
+/*** Best Players View ***/
+#best-players table {
+	display: inline-table;
+}
+#best-players table td {
+	padding: 1% 3%;
+	width: 30%;
+}
+#best-players h2 {
+	color: white;
+}
+#best-players-link {
+	text-align: right;
+}
+#best-players-link:hover {
+	color: green;
+}
 
 /******* old cold below *******/
 #images-box {
@@ -87,47 +121,7 @@ h4 {
 	border-bottom: 1px black solid;
 	background-color: yellow;
 }
-.pirate-icon {
-	width: 20px;
-	height: 20px;
-	display: inline;
-}
-/*#pirate-box {
-	min-height: 20px;
-}
-*/#game-level-alert {
-	width: 400px;
-	height: 100px;
-	background-color: red;
-	text-align:center;
-  position:absolute;
-  left:50%;
-  top:40%;
-  margin:-50px 0 0 -200px;
-}
-#game-level-alert button {
-	width: 100px;
-	height: 40px;
-}
-/*#best-players-link {
-	text-align: right;
-}
-#best-players-link:hover {
-	color: green;
-}*/
-#best-players {
-	width: 400px;
-	height: 300px;
-	background-color: grey;
-	text-align:center;
-  position:absolute;
-  left:50%;
-  top:40%;
-  margin:-150px 0 0 -200px;
-}
-.alert-not-now {
-  display:none;
-}
+
 #restart-game-box {
 	outline: 1px black solid;
 	background-color: orange;
@@ -136,17 +130,6 @@ h4 {
 	display: inline;
 	margin-bottom: 3px;
 }
-/*#best-player-form, #instructions {
-	width: 400px;
-	height: 250px;
-	background-color: blue;
-	text-align:center;
-  position:absolute;
-  left:50%;
-  top:40%;
-  margin:-125px 0 0 -200px;
-  color: white;
-}*/
 #best-player-form form{
 	width: 60%;
 	float: left;
@@ -157,11 +140,8 @@ h4 {
 	text-align: left;
 }
 #instructions {
-	background-color: grey;
+	background-color: gray;
 }
 #game-timer {
 	color: red;
 }
-/*#pirates-found-count {
-	margin-left: 10px;
-}*/

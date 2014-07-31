@@ -10,7 +10,7 @@
 	</div>
 	<div id="stat-score" class="stat">
 		<h4>Score</h4>
-		<h1 id="game-score">0</h1>
+		<h1 id="game-score">10000</h1>
 		<div id="pirate-found-num">
 			<h4>Arrggregated: <span id="pirates-found">0</span></h4>
 		</div>
@@ -33,42 +33,47 @@
 	<button>Start Sailing</button>
 </div>
 
-
-<!-- Level: <span id="game-level">1</span></br> -->
-<!-- Score: <span id="game-score">0</span> -->
-<!-- <div id="pirate-box">
-	Pirates found: <span id="pirates-found">0</span><span id="pirates-found-count"></span></br>
-</div> -->
-<!-- Time left: <span id="game-timer"></span>
-<button class="restart-game-button">Sail Again</button> -->
-<!-- <h1 id="best-players-link">Top Arrggregators</h1>
- -->
- <!-- <div id="rjs-box"></div> -->
-<!-- <div id="splash-box" class="alert-not-now">
-	<h1>Find the Pirates!</h1>
-	<button>Start</button>
-</div> -->
+<!-- Game Level and Gameover -->
 <div id="game-level-alert" class="alert-not-now">
-	<p>This is the Next Level Alert</p>
+	<h2>This is the Next Level Alert</h2>
 	<button id="confirmation">Keep Sailing!</button>
 	<button id="reset-alert-box" class="restart-game-button alert-not-now">Try Again</button>
 </div>
+
+<!-- Best Players View -->
 <div id="best-players" class="alert-not-now">
-	<% @players.each do |player| %>
-		<%= player.name %>
-		<span class="top-score"><%= player.score %></span></br>
-	<% end %>
+	<table>
+		<tr>
+			<td><h2>Name</h2></td>
+			<td><h2>Score</h2></td>
+		</tr>
+		<% @players.each do |player| %>
+			<tr>
+				<td><h2><%= player.name %></h2></td>
+				<td class="top-score"><h2><%= player.score %></h2></td>
+			</tr>
+		<% end %>
+	</table>
 </div>
 
+<!-- Best Player Form -->
 <div id="best-player-form" class="alert-not-now">
 	<h1>Great Job Arrrgregating those Pirates!</h1>
 	<h1>Congrats! You've made the list!</h1>
 	<h1>Your Score: <span id="high-score"></span></h1>
 	<div id="best-player-ranks">
+		<table>
+		<tr>
+			<td><h2>Name</h2></td>
+			<td><h2>Score</h2></td>
+		</tr>
 		<% @players.each do |player| %>
-			<%= player.name %>
-			<span class="top-score"><%= player.score %></span></br>
+			<tr>
+				<td><h2><%= player.name %></h2></td>
+				<td class="top-score"><h2><%= player.score %></h2></td>
+			</tr>
 		<% end %>
+	</table>
 	</div>
 	<button class="restart-game-button">Sail Again</button>
 	<form action="/add" method="POST">
