@@ -2,7 +2,8 @@ $(function() {
 	
 	Papel = setupRaphaelPaper();
 	
-	game = createNewGame(30);
+	// #NOTEtoSelf production is 60, testing 30
+	game = createNewGame(60);
 
 	drawImages();
 	keeperOfBestPlayers();

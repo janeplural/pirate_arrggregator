@@ -185,8 +185,9 @@ function makeBigRandomImageList(filenames) {
 	shuffledImages = _.shuffle(filenames);
 	level = parseInt(document.getElementById("game-level").innerHTML, 10);
 
+	// #NOTEtoSelf production should be 10, testing at 1
 	// balloon our list to be bigger but still random
-  _.times(filenames.length * 1, function(){
+  _.times(filenames.length * 10, function(){
   	var randomImage = _.sample(filenames);
   	shuffledImages.push(randomImage);
 	});
@@ -238,7 +239,6 @@ function youCantPlayNoMo() {
 // #NOTEtoSelf change the pirate image here too
 // *changed img src for testing
 function addPirateToCount(count){
-	// var pirate = _.template("<img class='pirate-icon' src='assets/square_Louisiana_Renaissance_Festival_Pirate.png'>");
 	var pirate = _.template("<img class='pirate-icon' src='images/square_Louisiana_Renaissance_Festival_Pirate.png'>");
 	if (count > 0) {
 	$("#pirates-found-count").append(pirate);
@@ -319,7 +319,7 @@ function manageClickableImage(image) {
 			calculateNonsensicalScore(this);
 			this.remove();
 			if (piratesFound === level) {
-				setTimeout(function(){advanceToNextLevel(level)}, 500); //production should be 300, testing at 500
+				setTimeout(function(){advanceToNextLevel(level)}, 300); //production should be 300, testing at 500
 			}
 		}.bind(this)
 		boo()
