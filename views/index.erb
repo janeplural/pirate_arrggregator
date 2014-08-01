@@ -5,19 +5,19 @@
 
 <div id="stats-holder">
 	<div id="stat-level" class="stat">
-		<h4>Level</h4>
+		<h3>Level</h3>
 		<h1 id="game-level">1</h1>
 	</div>
 	<div id="stat-score" class="stat">
-		<h4>Score</h4>
-		<h1 id="game-score">10000</h1>
+		<h3>Score</h3>
+		<h1 id="game-score">0</h1>
 		<div id="pirate-found-num">
-			<h4>Arrggregated: <span id="pirates-found">0</span></h4>
+			<h4>Arrggregated <span id="pirates-found">0</span></h4>
 		</div>
 		<div id="pirates-found-count"></div>
 	</div>
 	<div id="stat-time" class="stat">
-		<h4>Time Remaning</h4>
+		<h3>Time Remaning</h3>
 		<h1 id="game-timer"></h1>
 		<button class="restart-game-button">Sail Again</button>
 	</div>
@@ -35,22 +35,23 @@
 
 <!-- Game Level and Gameover -->
 <div id="game-level-alert" class="alert-not-now">
-	<h2>This is the Next Level Alert</h2>
-	<button id="confirmation">Keep Sailing!</button>
+	<h3>This is the Next Level Alert</h3>
+	<button id="confirmation">Keep Sailing</button>
 	<button id="reset-alert-box" class="restart-game-button alert-not-now">Try Again</button>
 </div>
 
 <!-- Best Players View -->
 <div id="best-players" class="alert-not-now">
+	<h2>The Best Arrggregators</h2>
 	<table>
 		<tr>
-			<td><h2>Name</h2></td>
-			<td><h2>Score</h2></td>
+			<td><h3 class="column-name">Name</h3></td>
+			<td><h3 class="column-name">Score</h3></td>
 		</tr>
 		<% @players.each do |player| %>
 			<tr>
-				<td><h2><%= player.name %></h2></td>
-				<td class="top-score"><h2><%= player.score %></h2></td>
+				<td><h3><%= player.name %></h3></td>
+				<td class="top-score"><h3><%= player.score %></h3></td>
 			</tr>
 		<% end %>
 	</table>
@@ -58,19 +59,20 @@
 
 <!-- Best Player Form -->
 <div id="best-player-form" class="alert-not-now">
-	<h1>Great Job Arrrgregating those Pirates!</h1>
-	<h1>Your Score: <span id="high-score"></span>
-	<button class="restart-game-button">Sail Again</button></h1>
+	<h3>Great Job Arrrgregating those Pirates!</h3>
+	<h2>Your Score: <span id="high-score"></span>
+	<button class="restart-game-button">Sail Again</button></h2>
 	<div id="best-player-ranks">
+		<h4>BEST ARRGGREGATORS</h4>
 		<table>
 		<tr>
-			<td><h2>Name</h2></td>
-			<td><h2>Score</h2></td>
+			<td><h4 class="column-name">Name</h4></td>
+			<td><h4 class="column-name">Score</h4></td>
 		</tr>
 		<% @players.each do |player| %>
 			<tr>
-				<td><h2><%= player.name %></h2></td>
-				<td class="top-score"><h2><%= player.score %></h2></td>
+				<td><h3><%= player.name %></h3></td>
+				<td class="top-score"><h3><%= player.score %></h3></td>
 			</tr>
 		<% end %>
 	</table>

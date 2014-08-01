@@ -3,7 +3,7 @@ function setupRaphaelPaper() {
 			yPapel = (window.innerWidth) / 4,
 			Papel = new Raphael('rjs-box', xPapel, yPapel);
 	
-	Papel.canvas.style.backgroundColor = 'yellow';
+	Papel.canvas.style.backgroundColor = '#EFF8DB';
 
 	Papel.customAttributes.class = function(name){
 		return (this.node.setAttribute("class", name));
@@ -71,7 +71,7 @@ function listenToAlertBox() {
 
 function listenForGameStart(game) {
 	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
-	nuhHuh.attr({"fill":"blue"});
+	nuhHuh.attr({"fill":"#EFF8DB"});
 	$("#instructions").removeClass("alert-not-now");
 	
 	$("#instructions button").on("click", function() {
@@ -222,7 +222,7 @@ function youCantPlayNoMo() {
 	nuhHuh.attr({"fill-opacity":0.4});
 
 	if (!checkForBestPlayer()) {
-		$("#game-level-alert h2").html("GAME OVER");
+		$("#game-level-alert h3").html("GAME OVER");
 		$("#confirmation").html("ok");
 		$("#reset-alert-box").removeClass("alert-not-now");
 		$("#game-level-alert").removeClass("alert-not-now");
@@ -274,7 +274,7 @@ function advanceToNextLevel(currlevel) {
 	} else if (currlevel == 1) {
 		var currLevelInfo = _.template("<div>You've found the Pirate!</br>Advance to level " + (currlevel += 1) + "</div>");
 	}
-	$("#game-level-alert h2").html(currLevelInfo);
+	$("#game-level-alert h3").html(currLevelInfo);
 	document.getElementById('game-level-alert').classList.remove('alert-not-now');
 	updateGameStats('game-level', currlevel);
 	updateGameStats('pirates-found', 0);
