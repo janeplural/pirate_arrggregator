@@ -217,7 +217,7 @@ function checkForBestPlayer() {
 
 function youCantPlayNoMo() {
 	// Put overlay on gameboard to prevent further clicks
-	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
+	var nuhHuh = Papel.rect(0, 0, $("svg").width(), $("svg").height());
 	nuhHuh.attr({"fill":"red"});
 	nuhHuh.attr({"fill-opacity":0.4});
 
