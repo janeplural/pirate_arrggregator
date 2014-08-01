@@ -185,9 +185,9 @@ function makeBigRandomImageList(filenames) {
 	shuffledImages = _.shuffle(filenames);
 	level = parseInt(document.getElementById("game-level").innerHTML, 10);
 
-	// #NOTEtoSelf production should be 10, testing at 1
+	// #NOTEtoSelf production should be 6, testing at 1
 	// balloon our list to be bigger but still random
-  _.times(filenames.length * 10, function(){
+  _.times(filenames.length * 6, function(){
   	var randomImage = _.sample(filenames);
   	shuffledImages.push(randomImage);
 	});
@@ -200,7 +200,7 @@ function makeBigRandomImageList(filenames) {
 												height: 273})
 	});
 
-	return shuffledImages;
+	return shuffledImages = _.shuffle(shuffledImages);
 }
 
 function checkForBestPlayer() {
