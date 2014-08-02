@@ -109,14 +109,10 @@ function listenForGameRestart(game) {
 
 /* Takes a convenient JSON object representing an SVG
  * Returns a JSON object with bells and whistles required by Raphael. */
- // #NOTEtoSelf update add the clickMe class when image names are finalized
- // #NOTEtoSelf update how the src is written too
- // *changed img src for testing
 function makeImageJSON(image) {
 	var raphImage = {
 		type: "image",
-		// src: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/" + image.filename,
-		src: image.filename,
+		src: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/" + image.filename + ".png",
 		x: image.x,
 		y: image.y,
 		width: image.width,
@@ -124,7 +120,7 @@ function makeImageJSON(image) {
 		transform: "r" + image.rotation
 	};
 
-	if (image.filename == 'https://s3-us-west-2.amazonaws.com/pirate-arrggregator/p_final.png'){
+	if (image.filename == 'p_final'){
 		raphImage.class = "clickMe";
 	}
 
@@ -193,8 +189,7 @@ function makeBigRandomImageList(filenames) {
   // this one's special cause we want to click it
   // level is equal to the number of pirates that need to be found
 	_.times(level, function(){
-		// shuffledImages.push({name: "images/Long_Cropped_Louisiana_Renaissance_Festival_Pirate.png",
-		shuffledImages.push({name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/p_final.png",
+		shuffledImages.push({name: "p_final",
 												width: 280,
 												height: 200})
 	});
@@ -236,7 +231,6 @@ function youCantPlayNoMo() {
 
 // #NOTEtoSelf add fade in & out
 // #NOTEtoSelf change the pirate image here too
-// *changed img src for testing
 function addPirateToCount(count){
 	var pirate = _.template("<img class='pirate-icon' src='https://s3-us-west-2.amazonaws.com/pirate-arrggregator/pirate_small.png'>");
 	if (count > 0) {
@@ -333,59 +327,58 @@ function keeperOfBestPlayers() {
 }
 
 // #NOTEtoSelf update images array with real photos
-// *changed img src for testing
-var images = [{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/apple.png",
+var images = [{name: "apple",
 								width: 194,
 								height: 179},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/blueberries.png",
+							{name: "blueberries",
 								width: 209,
 								height: 161},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/bust.png",
+							{name: "bust",
 								width: 200,
 								height: 106},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/cat.png",
+							{name: "cat",
 							 width: 75,
 							 height: 100},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/cherry.png",
+							{name: "cherry",
 							 width: 209,
 							 height: 155},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/child.png",
+							{name: "child",
 							 width: 209,
 							 height: 157},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/chipmunk.png",
+							{name: "chipmunk",
 							 width: 148,
 							 height: 195},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/fish.png",
+							{name: "fish",
 							 width: 156,
 							 height: 225},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/globe.png",
+							{name: "globe",
 							 width: 150,
 							 height: 150},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/lemons.png",
+							{name: "lemons",
 							 width: 153,
 							 height: 225},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/old_woman.png",
+							{name: "old_woman",
 							 width: 150,
 							 height: 150},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/quarterback.png",
+							{name: "quarterback",
 							 width: 113,
 							 height: 150},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/scary_house.png",
+							{name: "scary_house",
 							 width: 72,
 							 height: 164},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/seagull.png",
-							 width: 60,
+							{name: "seagull",
+							 weight: 60,
 							 height: 156},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/ship.png",
+							{name: "ship",
 							 width: 200,
 							 height: 162},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/truck.png",
+							{name: "truck",
 							 width: 113,
 							 height: 150},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/welcome_to_nc.png",
+							{name: "welcome_to_nc",
 							 width: 151,
 							 height: 179},
-							{name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/white_flower.png",
+							{name: "white_flower",
 							 width: 150,
 							 height: 150}],
 		biggerListOfShuffledImages,
