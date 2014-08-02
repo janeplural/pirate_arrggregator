@@ -117,7 +117,6 @@ function makeImageJSON(image) {
 		type: "image",
 		// src: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/" + image.filename,
 		src: image.filename,
-		// src: "images/" + image.filename,
 		x: image.x,
 		y: image.y,
 		width: image.width,
@@ -125,9 +124,8 @@ function makeImageJSON(image) {
 		transform: "r" + image.rotation
 	};
 
-	if (image.filename == 'images/Long_Cropped_Louisiana_Renaissance_Festival_Pirate.png'){
+	if (image.filename == 'https://s3-us-west-2.amazonaws.com/pirate-arrggregator/p_final.png'){
 		raphImage.class = "clickMe";
-		raphImage.height = image.width * 1.68575735;
 	}
 
 	return raphImage;
@@ -187,7 +185,7 @@ function makeBigRandomImageList(filenames) {
 
 	// #NOTEtoSelf production should be 6, testing at 1
 	// balloon our list to be bigger but still random
-  _.times(filenames.length * 6, function(){
+  _.times(filenames.length * 1, function(){
   	var randomImage = _.sample(filenames);
   	shuffledImages.push(randomImage);
 	});
@@ -195,9 +193,10 @@ function makeBigRandomImageList(filenames) {
   // this one's special cause we want to click it
   // level is equal to the number of pirates that need to be found
 	_.times(level, function(){
-		shuffledImages.push({name: "images/Long_Cropped_Louisiana_Renaissance_Festival_Pirate.png",
-												width: 398,
-												height: 273})
+		// shuffledImages.push({name: "images/Long_Cropped_Louisiana_Renaissance_Festival_Pirate.png",
+		shuffledImages.push({name: "https://s3-us-west-2.amazonaws.com/pirate-arrggregator/p_final.png",
+												width: 280,
+												height: 200})
 	});
 
 	return shuffledImages = _.shuffle(shuffledImages);
@@ -239,7 +238,7 @@ function youCantPlayNoMo() {
 // #NOTEtoSelf change the pirate image here too
 // *changed img src for testing
 function addPirateToCount(count){
-	var pirate = _.template("<img class='pirate-icon' src='images/square_Louisiana_Renaissance_Festival_Pirate.png'>");
+	var pirate = _.template("<img class='pirate-icon' src='https://s3-us-west-2.amazonaws.com/pirate-arrggregator/pirate_small.png'>");
 	if (count > 0) {
 	$("#pirates-found-count").append(pirate);
 	} 
