@@ -181,7 +181,7 @@ function makeBigRandomImageList(filenames) {
 
 	// #NOTEtoSelf production should be 6, testing at 1
 	// balloon our list to be bigger but still random
-  _.times(filenames.length * 1, function(){
+  _.times(filenames.length * 6, function(){
   	var randomImage = _.sample(filenames);
   	shuffledImages.push(randomImage);
 	});
