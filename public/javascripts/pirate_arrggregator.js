@@ -1,12 +1,9 @@
-// #NOTEtoSelf changed backgroundColor for demo
 function setupRaphaelPaper() {
 	var xPapel = window.innerWidth,
 			yPapel = (window.innerWidth) / 4,
 			Papel = new Raphael('rjs-box', xPapel, yPapel);
 	
-	// Papel.canvas.style.backgroundColor = '#EFF8DB';
-	// Papel.canvas.style.backgroundColor = '#FFFFFF';
-	Papel.canvas.style.backgroundColor = 'rgba(217, 77, 86, 1)';
+	Papel.canvas.style.backgroundColor = '#EFF8DB';
 
 	Papel.customAttributes.class = function(name){
 		return (this.node.setAttribute("class", name));
