@@ -123,7 +123,7 @@ function makeImageJSON(image) {
 		transform: "r" + image.rotation
 	};
 
-	if (image.filename == 'p_final'){
+	if (image.filename == 'red_pir'){
 		raphImage.class = "clickMe";
 	}
 
@@ -193,9 +193,9 @@ function makeBigRandomImageList(filenames) {
   // this one's special cause we want to click it
   // level is equal to the number of pirates that need to be found
 	_.times(level, function(){
-		shuffledImages.push({name: "p_final",
-												width: 280,
-												height: 200})
+		shuffledImages.push({name: "red_pir",
+												width: 398,
+												height: 273})
 	});
 
 	return shuffledImages = _.shuffle(shuffledImages);
@@ -236,7 +236,7 @@ function youCantPlayNoMo() {
 // #NOTEtoSelf add fade in & out
 // #NOTEtoSelf change the pirate image here too
 function addPirateToCount(count){
-	var pirate = _.template("<img class='pirate-icon' src='https://s3-us-west-2.amazonaws.com/pirate-arrggregator/pirate_small.png'>");
+	var pirate = _.template("<img class='pirate-icon' src='https://s3-us-west-2.amazonaws.com/pirate-arrggregator/red_pirate_icon.png'>");
 	if (count > 0) {
 	$("#pirates-found-count").append(pirate);
 	} 
