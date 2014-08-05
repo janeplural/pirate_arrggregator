@@ -176,13 +176,14 @@ function makeFunImageList(Papel, filenames) {
 }
 
 // #NOTEtoSelf changed balloon number for demo
+// #NOTEtoSelf changed to green pirate for demo
 function makeBigRandomImageList(filenames) {
 	shuffledImages = _.shuffle(filenames);
 	level = parseInt(document.getElementById("game-level").innerHTML, 10);
 
 	// #NOTEtoSelf production should be 6, testing at 1
 	// balloon our list to be bigger but still random
-  _.times(filenames.length * 3, function(){
+  _.times(filenames.length * 8, function(){
   	var randomImage = _.sample(filenames);
   	shuffledImages.push(randomImage);
 	});
@@ -195,7 +196,8 @@ function makeBigRandomImageList(filenames) {
 												height: 273})
 	});
 
-	return shuffledImages = _.shuffle(shuffledImages);
+	// return shuffledImages = _.shuffle(shuffledImages);
+	return shuffledImages
 }
 
 function checkForBestPlayer() {
