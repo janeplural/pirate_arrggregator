@@ -1,6 +1,6 @@
 function setupRaphaelPaper() {
 	var xPapel = window.innerWidth,
-			yPapel = (window.innerWidth) / 4,
+			yPapel = (window.innerWidth) / 3,
 			Papel = new Raphael('rjs-box', xPapel, yPapel);
 	
 	Papel.canvas.style.backgroundColor = '#EFF8DB';
@@ -70,7 +70,7 @@ function listenToAlertBox() {
 }
 
 function listenForGameStart(game) {
-	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 4));
+	var nuhHuh = Papel.rect(0, 0, (window.innerWidth), (window.innerWidth / 3));
 	nuhHuh.attr({"fill":"#EFF8DB"});
 	$("#instructions").removeClass("alert-not-now");
 	
