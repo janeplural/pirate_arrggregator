@@ -278,6 +278,11 @@ function advanceToNextLevel(currlevel) {
 	// clear Papel & draw images
 	clearImages("rjs-box");
 	drawImages();
+
+
+	$("#game-level-alert button").on("click", function() {
+		nuhHuh.remove()
+	});
 }
 
 function calculateNonsensicalScore(image) {
